@@ -31,14 +31,14 @@ public class Negozio {
         products.add(baby2);
         products.add(baby3);
 
+        //Creo un'altra lista
         List<Product> products2 = new ArrayList<>();
         products2.add(baby1);
         products2.add(book2);
         products2.add(baby2);
 
 
-
-
+        //Creo degli ordini di prova
         Order ordineProva = new Order(4444444L, "processing", products, customer1);
         System.out.println(ordineProva);
 
@@ -46,8 +46,6 @@ public class Negozio {
         System.out.println(ordineProva2);
 
         //ESERCIZIO 1
-
-
 
         List<Product> libriSopraCento = products.stream()
                 .filter(product -> "Books".equals(product.getCategory()) && product.getPrice() > 100)
