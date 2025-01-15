@@ -47,9 +47,9 @@ public class Negozio {
 
         //ESERCIZIO 1
 
-        List<List<Product>> lista = Arrays.asList(products);
 
-        List<Product> libriSopraCento = lista.stream().flatMap(List::stream)
+
+        List<Product> libriSopraCento = products.stream()
                 .filter(product -> "Books".equals(product.getCategory()) && product.getPrice() > 100)
                         .collect(Collectors.toList());
 
@@ -57,12 +57,11 @@ public class Negozio {
 
         //ESERCIZIO 2
 
-        List<List<Product>> lista2 = Arrays.asList(products2);
-        List<Product> articoliBambino = lista2.stream().flatMap(List::stream)
+
+        List<Product> articoliBambino = products2.stream()
                 .filter(product -> "Baby".equals(product.getCategory()))
                 .collect(Collectors.toList());
         articoliBambino.forEach(product -> System.out.println("Prodotto della categoria Baby: " + product.getName()));
-
 
 
 
